@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Kawasaki Portfolio Site</title>
+    <meta name="description" content="テキストテキストテキストテキストテキストテキストテキストテキス">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> 
+<script src="js/main.js"></script>
+  </head>
+
+ <body>
+  <div class="container">
+
+ <!-- ヘッダー -->
+   <header id="header">
+    <div class="logo1">
+      <h1 class="logo">Kawasaki <br class="sma">Portfolio Site</h1>
+      </div>
+        <nav id="navi">
+          <ul class="header-wrapper">
+              <li><a href="#">Home</a></li>
+              <li><a href="#About">About</a></li>
+              <li><a href="#Service">Service</a></li>
+              <li><a href="works1.html">Works</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+  
+        <div id="mask"></div>
+
+    </header>
+<!-- ヘッダー終了 -->
+
+
+    <main>
+<!-- メインビジュアル -->
+      <div id="mainvisual">
+        <div class="mainvisualText">
+          <h1>Kawasaki<br>Portfolio Site</h1>
+          <p>イメージをカタチにする<br>
+          お手伝いを致します</p>
+        </div>
+        <img src="img/main1.jpg" alt="">
+      </div>
+<!-- メインビジュアル終了 -->
+
+
+<!--　about  -->
+      <section id="About" class="about-wrapper">
+        <div class="about-text">
+          <h2 class="section-title">
+            <span class="en">About</span>
+            <span class="ja">私について</span>
+          </h2>
+          <div class="img">
+            <img src="img/about.jpg" alt=""></div>
+          <div class="img-p">
+          <p class="img-ptext1">ご覧いただきありがとうございます!<br>フリーランスでWeb制作を行っています。</p>
+          <p class="img-ptext2">お客様に寄り添い、イメージを形にするお手伝いを致します。</p>
+          <p class="img-ptext3">ご質問などございましたらお気軽にご相談ください。</p>
+        </div>
+        </div>
+      </section>
+ <!--　about終了  -->
+
+
+ <!-- Service -->
+ <section id="Service">
+  <h2 class="section-title">
+    <span class="en">Service</span>
+    <span class="ja">できること</span>
+  </h2>
+
+  <div class="grid">
+    <div class="service-item fadein">
+      <img src="img/service 1.jpg" alt="">
+      <div class="item-content">
+        <p class="item-cat">WEBサイト制作</p>
+        <p class="item-text">ご用意していただいたサイトデザインを元にWebサイトをコーディングし作成いたします。</p>
+      </div>
+    </div>
+
+    <div class="service-item fadein">
+      <img  src="img/service 2.jpg" alt="">
+      <div class="item-content">
+        <p class="item-cat">デザイン</p>
+        <p class="item-text">デザインがお決まりでない場合は、ヒアリングを行い、デザインを提案させていただきます。</p>
+       </div>
+    </div>
+
+    <div class="service-item fadein">
+      <img src="img/service 3.jpg" alt="">
+      <div class="item-content">
+        <p class="item-cat">WordPress</p>
+        <p class="item-text">オリジナルテーマ作成や既存ホームページのWordPress化が可能。記事の追加も可能です。</p>
+      </div>
+    </div>
+     
+    </div>
+    </section>
+<!-- Service 終了-->
+
+ <!-- works -->
+      <section id="Works" class="works-wrapper">
+        <h2 class="section-title">
+          <span class="en">Works</span>
+          <span class="ja">制作実績</span>
+        </h2>
+
+        <div class="swiper main-swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+
+
+            <!-- Slides -->
+
+            
+            <div class="swiper-slide">
+              <a href="works_1.html">
+              <img src="img/works 1.jpg" alt=""></a>
+              <p class="works-title">Coffee Shop</p>
+              
+            </div>
+
+            <div class="swiper-slide">
+              <a href="works_2.html">
+              <img src="img/works 2.jpg" alt=""></a>
+              <p class="works-title">BBB</p>
+            </div>
+
+            <div class="swiper-slide">
+              <a href="works_3.html">
+              <img src="img/works 3.jpg" alt=""></a>
+              <p class="works-title">Furniture Design</p>
+            </div>
+
+            <div class="swiper-slide">
+              <a href="works_4.html">
+              <img src="img/works 4.jpg" alt=""></a>
+              <p class="works-title">Sneakers</p>
+            </div>
+          </div>
+   
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>  
+         </div>
+        <div class="works-bottom"></div>
+            <a href="works1.html" class="works-btn">View More</a>
+          </div>
+      </section>
+<!-- Works 終了-->
+
+ <!-- Contact -->
+      <section id="Contact" class="contact-wrapper">
+        <div class="contact-text">
+          <h2 class="section-title">
+            <span class="en">Contact</span>
+            <span class="ja">お問い合わせ</span>
+          </h2>
+          <p class="contact-p">
+            当サービスのご相談やご依頼などお気軽にお問い合わせください。
+          </p>
+          <div class="contact-bottom">
+            <a href="Contact.html" class="contact-btn">お問い合わせ</a>
+          </div>
+        </div>
+      </section>
+ <!-- Contact終了 -->
+
+    </main>
+
+ <!-- フッター -->
+    <footer id="footer">
+      <div class="footer-main-wrapper">
+        <div class="footer-flex">
+          <ul class="footer-wrapper">
+            <li><a href="#">Home</a></li>
+              <li><a href="#About">About</a></li>
+              <li><a href="#Service">Service</a></li>
+              <li><a href="works1.html">Works</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <p class="copyright">&copy; Kawasaki Portfolio Site</p>
+      </div>
+    </footer>
+<!-- フッター終了 -->
+
+  </body>
+</div>
+</html>

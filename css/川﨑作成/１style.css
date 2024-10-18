@@ -1,0 +1,1288 @@
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+}
+body { 
+  color: #333333;
+}
+a {
+  color: #FDFDFF;
+  background-color: #3CBB34;
+  text-decoration: none;
+}
+img {
+  max-width: 100%; 
+}
+li {
+  list-style: none;
+}
+
+.section-title {
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+}
+
+/*
+「display: inline-block;」を設定してブロック化することで、
+改行されてmargin-bottomが使用できるようになる
+*/
+.section-title .en {
+  display: block;
+  font-size: 32px;
+  padding-bottom: 19px;
+}
+.section-title .ja {
+  display: block;
+  font-size: 32px;
+}
+
+/*
+フェード表示させる要素に使用するためのクラス
+*/
+.fadein {
+  opacity : 0;
+  transform: translateY(20px);
+  transition: all 1s;
+}
+
+/*-------------------------------------------
+ヘッダー
+----
+「position: fixed;」でヘッダーを固定し、「z-index: 10;」で前面に表示
+※他のコンテンツでpositionをrelative、absolute、fixedのいずれかに
+設定している場合は、z-indexの数値が大きい方が前面に表示される
+*/
+#header {
+  max-width: 100%;
+  background-color: #FDFDFF;
+}
+/*PCでは無効（改行しない）*/
+.sma{
+  display: none;
+}
+
+#header .logo1 {
+  height: 50px;
+}
+#header .logo {
+  height: 50px;
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.25);
+  color: #3CBB34;
+  padding-left: 100px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  line-height: 1px;
+}
+
+
+#navi {
+  height: 50px;
+  background-color: #3CBB34;
+}
+#navi a {
+  color: #FDFDFF;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: bold;
+}
+.open #navi {
+  left: 0;
+  opacity: 1;
+}
+#navi ul {
+  display: flex;
+  align-items: center;
+  padding-left: 100px;
+}
+#navi li {
+  font-size: 20px;
+  padding: 10px 60px 10px 0;
+}
+
+/*-------------------------------------------
+Mainvisual
+-------------------------------------------*/
+#mainvisual {
+  margin-top: 0;
+  position: relative;
+}
+#mainvisual img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin: 0 auto;
+  
+ 
+}
+
+#mainvisual .mainvisualText {
+  position: absolute;
+  right: 7vw;
+  bottom: 10vw;
+  width: 300px;
+  height: 200px;
+  background-color: #3CBB34;
+  opacity: 0.75; 
+}
+#mainvisual .mainvisualText h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #FDFDFF;
+  text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.25);
+  padding-left: 40px;
+  padding-top: 14px;
+  padding-bottom: 3px;
+}
+#mainvisual .mainvisualText p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FDFDFF;
+  text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.25);
+  padding-left: 40px;
+  padding-top: 6px;
+  padding-bottom: 36px;
+}
+
+/*-------------------------------------------
+About
+-------------------------------------------*/
+#About{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 800px; 
+  background-color: #FDFDFF;
+  margin: 0 auto; 
+}
+.about-wrapper {
+  max-width: 1280px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.about-text  {
+  text-align: center;
+}
+
+#About .section-title {
+  color: #333333;
+  margin-bottom: 25px;
+}
+#About .img {
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  margin: 0 auto; 
+  }
+#About .img-p {
+  width: 100%;
+  font-size: 24px;
+  margin-top: 50px;
+    text-align: center;
+}
+#About .img-ptext1 {
+  margin: 0px 0px 15px 0px; 
+  text-align: center;
+}
+#About .img-ptext2 {
+  margin: 15px 0px 15px 0px;  
+  text-align: center;
+}
+
+#About .img-ptext3 {
+  margin: 15px 0px 0px 0px; 
+  text-align: center;
+}
+/*-------------------------------------------
+Service
+-------------------------------------------*/
+#Service {
+  max-width: 100%;
+  height: 800px;
+  padding-top: 100px;
+  margin: 0 auto;
+  background-color: rgba(60,187,52,0.1);
+}
+#Service .section-title {
+  font-weight: normal;
+  line-height: 1;
+  margin-bottom: 50px;
+  }
+
+/*
+グリッドレイアウト
+要素の最小サイズは300pxで、画面の幅にあわせて要素の幅が自動で変化する
+repeatで全ての要素に対して適用
+「gap: 30px;」で行と列の隙間を設定
+*/
+#Service .grid {
+  display: flex;
+  gap: 30px;
+  place-content: center; 
+}
+
+#Service .grid .service-item {
+  width: 340px;
+  height: 450px;
+  background-color: #FDFDFF;
+  border-radius: 15px;
+  padding-top: 30px;
+  text-align: center;
+  transition: all  0.7s ease;
+  box-shadow: 4px 4px 4px 4px #747373;
+}
+#Service .grid img {
+  vertical-align: top;
+  width: 256px;
+  height: 240px;
+ }
+
+#Service .grid .item-cat {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 14px 0px 5px 0px;
+  }
+#Service .grid .item-text { 
+  font-size: 20px; 
+  padding: 0px 20px;
+  text-align: left
+}
+
+#Service .item-cat {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#Service .item-text {
+  font-size: 20px;
+}
+
+/*-------------------------------------------
+Works
+-------------------------------------------*/
+#Works {
+  width: 100%;
+  max-width: 1280px;
+  height: 800px;
+  padding-top: 100px;
+  background-color: #FDFDFF;
+ 
+}
+#Works .section-title {
+  padding-bottom: 50px;
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+}
+
+/*
+「display: inline-block;」を設定してブロック化することで、
+改行されてmargin-bottomが使用できるようになる
+*/
+#Works-table .section-title .en {
+  display: block;
+  font-size: 32px;
+  padding-bottom: 19px;
+  padding-top: 50px;
+}
+#Works-table .section-title .ja {
+  display: block;
+  font-size: 32px;
+}
+
+/*-------------------------------------------
+スライダー
+-------------------------------------------*/
+#Works .swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
+    box-sizing: content-box;
+}
+
+#Works .swiper-slide {
+  padding-bottom: 70px;
+  text-align: center;
+}
+
+#Works img {
+  max-width: 100%;
+  width: 340px;
+  height: auto;
+  Vertical-align: bottom
+
+}
+
+#Works .swiper-slide .works-title {
+  font-size: 32px;
+  text-align: center;  
+  padding-top: 20px;
+ 
+}
+
+#Works .main-swiper .swiper-pagination-bullet{
+  background-color: #3CBB34; 
+  width: 18px;
+  height: 18px;
+  margin-top: 30px!important;
+  
+}
+
+#Works .swiper-pagination{
+  bottom: 30px!important;
+}
+
+/*-------------------------------------------
+Works btn
+-------------------------------------------*/
+#Works .works-btn {
+  border: 1px solid #3CBB34;
+  border-radius: 50px;
+  padding: 5px;
+  width: 300px;
+  height: 60px;
+  color: #FDFDFF;
+  background-color: #3CBB34;
+  font-weight: bold;
+  font-size: 24px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  line-height:50px;
+}
+
+/*-------------------------------------------
+TOP、works一覧
+-------------------------------------------*/
+#works-table-wrapper {
+  width: 100%;
+  height: 1030px;
+  padding-top: 50px;
+  padding-bottom: 100px;
+
+}
+#Works-table .section-title {
+  padding-bottom: 50px;
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+}
+
+
+
+/*
+「display: inline-block;」を設定してブロック化することで、
+改行されてmargin-bottomが使用できるようになる
+*/
+#Works-table .section-title .en {
+  display: block;
+  font-size: 24px;
+  padding-bottom: 19px;
+  padding-top: 50px;
+}
+#Works-table .section-title .ja {
+  display: block;
+  font-size: 24px;
+}
+
+
+
+.works-swiper {
+  width: 100%;
+  padding: 0px;
+
+  
+ 
+}
+.Works-table-list {
+  width:100%;
+  display:flex;
+  flex-wrap:wrap; /*折り返し*/
+  justify-content:center;/*両端揃え*/
+  column-gap: 100px;
+}
+.column {
+  width:29%;
+  display:flex;
+  flex-direction:column;
+  text-align: center;
+  box-sizing:border-box;
+}
+
+.column:nth-of-type(n+3) {
+  margin-top:40px;
+}
+.column img{
+  width: 100%;
+  Vertical-align: bottom
+}
+
+
+
+.works-title {
+  display:flex;
+  flex-direction:column;
+  flex-grow:1;
+  width:100%;
+}
+
+.works-list-title {
+ font-size: 32px;
+ padding-top: 10px;
+}
+
+
+
+.Works-table-pagination {  
+  display: flex;
+  justify-content: center;
+ 
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.Works-table-pagination a {
+  background-color: rgba(60,187,52,0.1);
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: solid 0.5px  rgba(0, 0, 0, 0.25);
+}
+
+.Works-table-pagination .space {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+
+
+.Works-table-pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.Works-table-pagination a:hover:not(.active) {
+  color: #FDFDFF;
+  background-color: #4CAF50;}
+
+/*-------------------------------------------
+worksITEM
+-------------------------------------------*/
+.works-table-item-wrapper {
+  width: 100%;
+  height: 939px;
+  padding: 0 16px 100px;
+  
+
+}
+#Works-table-item .section-title {
+  padding-bottom: 30px;
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+}
+
+
+
+/*
+「display: inline-block;」を設定してブロック化することで、
+改行されてmargin-bottomが使用できるようになる
+*/
+#Works-table-item .section-title .en {
+  display: block;
+  font-size: 20px;
+  padding-bottom: 19px;
+  padding-top: 50px;
+}
+#Works-table-item .section-title .ja {
+  display: block;
+  font-size: 20px;
+}
+
+/*
+内容
+*/
+#works-item {
+  width: 100%;
+  height: 260px;
+  text-align: center;
+}
+#works-item a {
+  width: 100%;
+  text-align: center;
+  background-color: #FDFDFF;
+}
+
+#works-item img {
+  height: 135px;
+  text-align: center;
+  
+}
+
+
+
+
+#item {
+  width: 100%;
+  height: 210px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.item-table {
+  font-size: 16px;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+#item .item-text {
+ border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+}
+
+.item-text-th {
+  padding-bottom: 46px;
+}
+.item-text th {
+  text-align: start;
+}
+
+#item .item-text td {
+  height: 50px;
+padding: 17px 0 16px 55px;
+ }
+
+
+
+
+/*-------------------------------------------
+Works btn
+-------------------------------------------*/
+.works-item-bottom {
+  padding-top: 100px;
+  text-align: center;
+}
+
+
+.works-item-btn {
+  border: 1px solid #3CBB34;
+  border-radius: 50px;
+  padding: 5px;
+  width: 300px;
+  height: 60px;
+  color: #FDFDFF;
+  background-color: #3CBB34;
+  font-weight: bold;
+  font-size: 24px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  line-height:50px;
+}
+
+
+
+
+
+/*-------------------------------------------
+Contact
+-------------------------------------------*/
+.contact-wrapper {
+  width: 100%;
+
+  height: 590px;
+  background-color: rgba(60,187,52,0.1);
+  padding-top: 100px;
+
+  margin: 0 auto;
+}
+#Contact .section-title {
+  font-weight: normal;
+  line-height: 1;
+  margin-bottom: 100px;
+  }
+
+#Contact .contact-p {
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 1;
+  padding-bottom: 100px;
+  text-align: center;
+  }
+
+#Contact .contact-bottom {
+    padding: 32px 16px;
+    margin-bottom: 10px;
+  }
+
+  #Contact .contact-btn {
+    border: 1px solid #3CBB34;
+    border-radius: 50px;
+    padding: 5px;
+    width: 300px;
+    height: 60px;
+    color: #FDFDFF;
+    font-weight: bold;
+    font-size: 24px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    line-height:50px;
+  }
+
+/*-------------------------------------------
+footer
+-------------------------------------------*/
+.footer-main-wrapper {
+  width: 100%;
+  height: 136px;
+  background-color: #3CBB34;
+  margin: 0 auto;
+}
+
+#footer a {
+  color: #FDFDFF;
+  font-weight: bold;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#footer ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#footer li {
+  font-size: 20px;
+  margin-top: 53px;
+  margin-bottom: 20px;
+  padding-left:  100px;
+}
+
+#footer .copyright {
+  font-size: 16px;
+  color: #FDFDFF;
+  font-weight: bold;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+/*-------------------------------------------
+SP
+-------------------------------------------*/
+@media screen and (max-width: 768px) {
+  .section-title .en {
+    font-size: 24px;
+    padding-bottom: 10px;
+  
+  }
+  .section-title .ja {
+    display: block;
+    font-size:24px;
+ 
+  }
+
+  .toggle_btn {
+    right: 20px;
+}
+  /*-------------------------------------------
+  ヘッダー
+  -------------------------------------------*/
+  #header .logo1 {
+    position:relative;
+    height: 136px;
+    background-color: #3CBB34;
+  }
+
+  #header .logo {
+    position: absolute;
+    top: 25%;
+    transform : translateY(-50%);
+    height: 50px;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.25);
+    color: #FDFDFF;
+    padding-left : 16px;
+    line-height: 30px;
+  }
+    
+  .sma{
+    display: block;
+}
+
+.header-wrapper {
+  display: none;
+}
+  
+
+
+  
+
+  /*-------------------------------------------
+  Mainvisual
+  -------------------------------------------*/
+  #mainvisual {
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  #mainvisual img {
+
+    width: 100%;
+    height: 281px;
+    margin: 0;
+    Vertical-align: bottom
+    object-fit: cover;
+  
+   
+  }
+  #mainvisual .mainvisualText {
+    position: unset;
+    width: 100%;
+    height: auto;
+    right: 0vw;
+    bottom: 0vw;
+    background-color: #3CBB34;
+    opacity: 0.75; 
+  }
+  #mainvisual .mainvisualText h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #FDFDFF;
+    text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.25);
+    padding-left: 40px;
+    padding-top: 14px;
+    padding-bottom: 3px;
+    
+  }
+  #mainvisual .mainvisualText p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FDFDFF;
+    text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.25);
+    padding-left: 40px;
+    padding-top: 6px;
+    padding-bottom: 36px;
+ 
+  }
+
+
+
+
+
+
+   /*
+  ハンバーガーメニュー
+  ※ハンバーガーメニューの説明は他の課題と重複するため割愛
+  */
+  #navi {
+   align-items: center;
+    width: 300px;
+    background: #FDFDFF;
+    padding: 25px;
+    position: fixed;
+    top: 0;
+    left: 10px;
+    bottom: 0;
+    opacity: 0;
+    overflow-y: auto;
+    transition: 0.5s;
+    z-index: 20;
+  }
+  .open #navi {
+     width: 283px;
+    height: 517px;
+    left: 0;
+    opacity: 1;
+    background-color: rgba(221, 221, 221, 0.75);
+    margin-top: 136px;
+    margin-left: 92px;
+  }
+  #navi ul.header-wrappe {
+   
+    width: 283px;
+    height: 517px;
+    margin-bottom: 30px;
+  }
+
+  #navi ul {
+    gap: 45px;
+  flex-direction: column;
+  
+}
+
+  #navi ul li { 
+    width: 44px;
+    height: 19px;
+    font-size: 24px;
+    
+ 
+  }
+  #navi a {
+    color: #333333;
+    background-color: transparent;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+
+
+  .hamburger {
+    width: 46px;
+    height: 32px;
+    cursor: pointer;
+    position: fixed;
+    top: 46px;
+    right: 16px;
+    transition: 0.5s;
+    z-index: 20;
+  }
+  .hamburger span {
+    width: 46px;
+    height: 6px;
+    background-color: #FDFDFF;
+    border-radius: 4px;
+    display: block;
+    position: absolute;
+    left: 0;
+    transition: 0.5s;
+  }
+  .hamburger span:nth-child(1) {
+    top: 0px;
+  }
+  .hamburger span:nth-child(2) {
+    top: 13px;
+  }
+  .hamburger span:nth-child(3) {
+    bottom: 0px;
+  }
+  .open .hamburger span {
+    background-color: #FDFDFF;
+  }
+  .open .hamburger span:nth-child(1) {
+    transform: translateY(13px) rotate(-315deg);
+  }
+  .open .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .open .hamburger span:nth-child(3) {
+    transform: translateY(-13px) rotate(315deg);
+  }
+  #mask {
+    display: none;
+    transition: 0.5s;
+  }
+  .open #mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(221, 221, 221, 0.3);
+    cursor: pointer;
+    display: block;
+    opacity: 0.8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+
+
+
+  
+
+  /*-------------------------------------------
+  About
+  -------------------------------------------*/
+  #About {
+    flex-direction: column;
+    height: 654px;
+  }
+  .about-wrapper {
+    max-width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+ #About .img {
+  width: 235px;
+  height: 196px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+  #About .img img {
+    width: 235px;
+    height: 196px;
+  }
+  #About .about-text {
+  
+    width: 100%;
+    height: 554px;
+    padding: 0 32px;
+   
+  }
+
+  #About .img-p {
+    display:block;
+    width: 100%;
+    height: 225px;
+    font-size: 16px;
+    line-height: 2;
+  }
+
+  #About .img-p .img-ptext1 {
+    text-align: left;
+  }
+  #About .img-p .img-ptext2 {
+    text-align: left;
+  }
+  #About .img-p .img-ptext3 {
+    text-align: left;
+  }
+
+  /*-------------------------------------------
+  Service
+  -------------------------------------------*/
+  #Service {
+      width: 100%;
+      height: 1633px;
+      padding: 50px 16px;
+  }
+  #Service .grid {
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #Service .grid .item-content {
+    height: 180px;
+  }
+
+  #Service .grid .item-text { 
+    font-size: 20px; 
+    padding: 0px 20px;
+    text-align: left
+  }
+  
+  #Service .item-cat {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  #Service .item-text {
+    font-size: 20px;
+  }
+  
+  /*-------------------------------------------
+  Works
+  -------------------------------------------*/
+  .works-wrapper {
+    width: 100%;
+    height: 1311px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #FDFDFF;
+    margin: 0 auto;
+  }
+
+  #Works .section-title {
+    padding-bottom: 25px;
+    font-weight: normal;
+    line-height: 1;
+}
+
+#Works .swiper-wrapper {
+  align-items: center;
+}
+  
+/*-------------------------------------------
+スライダー top
+-------------------------------------------*/
+.swiper-wrapper {
+  width: 100%;
+  height: 1054px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 50px;
+}
+
+#Works .swiper-slide {
+  flex-shrink: 0;
+  width: 226px;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  display: block;
+  padding-bottom: 0px;
+}
+#Works .swiper-slide img {
+width: 100%;
+  max-width: 311px;
+  height: 178px;
+  vertical-align: top;
+  Vertical-align: bottom;
+  object-fit: cover;
+}
+
+#Works .swiper-slide .works-title {
+  height: 48px;
+  font-size: 20px;
+  text-align: center; 
+  padding: 0; 
+ 
+ }
+
+ #Works .swiper-pagination{
+  display: none;
+ 
+}
+
+ #Works .works-bottom {
+  text-align: center;
+  padding: 0;
+ margin-top: 0px;
+  margin-top:35px;
+  }
+
+  #Works .works-btn {
+  border: 1px solid #3CBB34;
+  border-radius: 50px;
+  width: 200px;
+  height: 38px;
+  color: #FDFDFF;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+ }
+
+
+/*-------------------------------------------
+TOP、works一覧
+-------------------------------------------*/
+/*-------------------------------------------
+  Works
+  -------------------------------------------*/
+  .works-table-wrapper {
+    width: 100%;
+    height: auto;
+   
+    background-color: #FDFDFF;
+    margin: 0 auto;
+  }
+
+  .Works-table .section-title {
+    padding-bottom: 25px;
+    font-weight: normal;
+    line-height: 1;
+}
+  
+/*-------------------------------------------
+スライダー 一覧
+-------------------------------------------*/
+.works-swiper {
+  height: auto;
+  padding: 0 32px;
+}
+
+.column {
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  box-sizing:border-box;
+  row-gap: 0px;
+}
+.column:nth-of-type(n+2) {
+  margin-top:25px;
+}
+
+
+.works-list-title {
+  font-size: 20px;
+  padding-top: 25px;
+  margin-bottom: 25px;
+ }
+
+.Works-table-pagination {  
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  
+}
+
+.Works-table-pagination a {
+  background-color: rgba(60,187,52,0.1);
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: solid 0.5px  rgba(0, 0, 0, 0.25);
+}
+
+.Works-table-pagination .space {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+
+
+.Works-table-pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.Works-table-pagination a:hover:not(.active) {
+  color: #FDFDFF;
+  background-color: #4CAF50;}
+
+
+
+  /*-------------------------------------------
+ Contact
+  -------------------------------------------*/
+  .contact-wrapper {
+    width: 100%;
+    height: 355px;
+    background-color: rgba(60,187,52,0.1);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 75px;
+  }
+  .contact-text {
+    width: 100%;
+    height: 305px;
+  }
+  #Contact .section-title {
+    font-weight: normal;
+    line-height: 1;
+    margin-bottom: 50px;
+    }
+
+   
+  
+  #Contact .contact-p {
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1;
+    padding: 15px 30px  55px;
+    text-align: center;
+        }
+  
+  #Contact .contact-bottom {
+      text-align: center;
+      padding: 0;
+     margin-top: 0px;
+      margin-bottom: 0;
+      }
+  
+    #Contact .contact-btn {
+      border: 1px solid #3CBB34;
+      border-radius: 50px;
+      width: 200px;
+      height: 38px;
+      color: #FDFDFF;
+      font-weight: bold;
+      font-size: 16px;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+     }
+  
+  /*
+  「position: static;」でrelativeを解除
+  */
+  #Contactttttt {
+    height: auto;
+    flex-direction: column;
+    position: static;
+  }
+  /*
+  「position: static;」でabsoluteを解除
+  */
+  #Contactttttt .contact-text {
+    width: 100%;
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    position: static;
+  }
+  /*
+  「position: static;」でabsoluteを解除
+  */
+  #Contactttttt .img {
+    width: 100%;
+    padding: 0;
+    position: static;
+  }
+  /*-------------------------------------------
+  footer
+  -------------------------------------------*/
+  .footer-main-wrapper {
+    width: 100%;
+    height: 80px;
+    background-color: #3CBB34;
+    margin: 0 auto;
+  }
+  
+  #footer a {
+    color: #FDFDFF;
+    font-weight: bold;
+    font-size: 16px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   
+  }
+  #footer ul {
+     display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      text-align: center;
+      padding: 20px 16px 0px;
+  }
+  #footer li {
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left:  0px;
+  }
+  
+  #footer .copyright {
+    width: 100%;
+ 
+    font-size: 14px;
+    color: #FDFDFF;
+    font-weight: bold;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+  }
+} } 
